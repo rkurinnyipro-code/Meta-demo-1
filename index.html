@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find out why your ads aren't working · Result Labs</title>
+<meta name="description" content="Enter your business. Get a diagnosis of where your ad money leaks, the most you can afford per lead, and a ready-to-run campaign with ads for every platform.">
+<meta property="og:title" content="Your ads aren't failing. Your message is.">
+<meta property="og:description" content="Get a ready-to-run ad campaign for your business in 60 seconds: audiences, ads for every platform, budget split and your real numbers.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Crect width=%2740%27 height=%2740%27 rx=%2710%27 fill=%27%232ee07a%27/%3E%3Cpath d=%27M9 28l8.5-8.5 5 5L31 15M24.5 15H31v6.5%27 fill=%27none%27 stroke=%27%2304130a%27 stroke-width=%273.3%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070b09;--panel:#0f1512;--panel2:#151d19;--line:rgba(255,255,255,.08);--text:#e8efe9;--mute:#8a9a90;--green:#2ee07a;--amber:#f5a524;--red:#ff6b6b;--brand:#2563eb}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{min-height:100%;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+body{background:radial-gradient(1100px 600px at 80% -10%,rgba(46,224,122,.10),transparent 60%),radial-gradient(800px 500px at -5% 110%,rgba(46,224,122,.05),transparent 60%),var(--bg);background-attachment:fixed}
+button,input,select,textarea{font-family:inherit}
+.screen{display:none}.screen.on{display:block}
+.brandrow{display:flex;align-items:center;gap:11px}
+.brandrow svg{width:38px;height:38px;flex:none}
+.brandrow b{font-size:17px;font-weight:800;letter-spacing:-.01em;display:block}
+.brandrow small{font-size:12px;color:var(--mute)}
+.kick{font-size:12.5px;letter-spacing:.2em;color:var(--green);font-weight:700;text-transform:uppercase}
+
+/* intro */
+.intro{min-height:100vh;max-width:1180px;margin:0 auto;padding:28px 28px 40px;display:flex;flex-direction:column}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.other{font-size:13px;color:var(--mute);text-decoration:none;border:1px solid var(--line);padding:8px 13px;border-radius:999px;white-space:nowrap}
+.other:hover{color:var(--text);border-color:rgba(46,224,122,.4)}
+.introgrid{flex:1;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;padding-top:24px}
+.intro h1{font-size:58px;line-height:1.02;letter-spacing:-.04em;font-weight:800;margin:16px 0 18px;text-wrap:balance}
+.intro h1 span{color:var(--green)}
+.lead{font-size:19px;line-height:1.5;color:#c3d1c8;max-width:540px}
+.gets{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px;max-width:540px}
+.gets div{display:flex;gap:10px;align-items:center;font-size:14.5px;color:#d5e0d9;padding:11px 13px;border-radius:12px;background:var(--panel);border:1px solid var(--line)}
+.gets i{font-style:normal;font-size:17px}
+.fcard{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.fcard h2{font-size:21px;letter-spacing:-.02em;margin-bottom:4px}
+.fcard p.s{font-size:13.5px;color:var(--mute);margin-bottom:16px}
+.fl{display:block;font-size:12.5px;font-weight:600;color:#b9c7be;margin-bottom:13px}
+.fl small{color:#66756c;font-weight:500}
+.fl input,.fl select{display:block;width:100%;margin-top:6px;height:44px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0a0f0c;color:var(--text);padding:0 13px;font-size:15px;outline:none;transition:.2s}
+.fl select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#8a9a90 50%),linear-gradient(135deg,#8a9a90 50%,transparent 50%);background-position:calc(100% - 18px) 19px,calc(100% - 13px) 19px;background-size:5px 5px;background-repeat:no-repeat}
+.fl input:focus,.fl select:focus{border-color:rgba(46,224,122,.7);box-shadow:0 0 0 3px rgba(46,224,122,.15)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.money{position:relative}.money:before{content:'$';position:absolute;left:13px;bottom:13px;color:var(--mute);font-size:15px}.money input{padding-left:24px}
+.cta{width:100%;height:52px;border:0;border-radius:12px;background:var(--green);color:#04130a;font-weight:800;font-size:16px;cursor:pointer;box-shadow:0 10px 30px rgba(46,224,122,.25)}
+.cta:hover{filter:brightness(1.05)}
+.err{color:#ff9b9b;font-size:13px;margin-top:10px;min-height:1px}
+.fine{font-size:11.5px;color:#66756c;margin-top:12px;line-height:1.5}
+
+/* building */
+.building{min-height:100vh;display:grid;place-items:center;padding:24px}
+.bbox{width:min(520px,100%);text-align:center}
+.spinner{width:56px;height:56px;border-radius:50%;border:4px solid rgba(46,224,122,.15);border-top-color:var(--green);margin:0 auto 26px;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bbox h2{font-size:30px;letter-spacing:-.03em;margin-bottom:22px}
+.bsteps{text-align:left;display:flex;flex-direction:column;gap:10px}
+.bs{display:flex;gap:12px;align-items:center;padding:13px 16px;border-radius:12px;background:var(--panel);border:1px solid var(--line);color:var(--mute);font-weight:600;font-size:14.5px;transition:.4s}
+.bs i{font-style:normal;width:22px;text-align:center}
+.bs.on{color:var(--text);border-color:rgba(46,224,122,.45)}.bs.done{color:#cfe9d9}
+
+/* results */
+.rhead{position:sticky;top:0;z-index:20;background:rgba(7,11,9,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.rbar{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:12px 24px;gap:16px}
+.rnav{max-width:1180px;margin:0 auto;display:flex;gap:4px;padding:0 20px 10px;overflow-x:auto;scrollbar-width:none}
+.rnav::-webkit-scrollbar{display:none}
+.rnav a{font-size:13px;font-weight:600;color:var(--mute);text-decoration:none;padding:7px 12px;border-radius:999px;white-space:nowrap}
+.rnav a:hover,.rnav a.on{color:var(--text);background:rgba(255,255,255,.07)}
+.ghost{height:36px;padding:0 14px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--text);font-weight:600;font-size:13px;cursor:pointer;white-space:nowrap}
+.ghost:hover{border-color:rgba(46,224,122,.45)}
+.wrap{max-width:1180px;margin:0 auto;padding:10px 24px 60px}
+.hero{padding:34px 0 10px}
+.hero h1{font-size:46px;letter-spacing:-.035em;line-height:1.05;font-weight:800;margin-top:10px;text-wrap:balance}
+.hero h1 span{color:var(--green)}
+.hero p{color:#b9c7be;font-size:17px;margin-top:12px;max-width:760px;line-height:1.5}
+section.sec{padding-top:44px;scroll-margin-top:110px}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+.sh h2{font-size:28px;letter-spacing:-.025em;font-weight:800}
+.sh .num{font-size:12px;font-weight:800;color:var(--green);letter-spacing:.14em;margin-bottom:6px}
+.sh p{color:var(--mute);font-size:14.5px;max-width:620px;margin-top:6px;line-height:1.5}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
+
+/* diagnosis */
+.diag{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.leak{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.leak .x{display:flex;gap:11px;align-items:flex-start;font-weight:700;font-size:15.5px;line-height:1.4}
+.leak .x i{font-style:normal;flex:none;width:24px;height:24px;border-radius:50%;background:rgba(255,107,107,.14);color:var(--red);display:grid;place-items:center;font-size:12px;font-weight:800;margin-top:1px}
+.leak .f{display:flex;gap:11px;align-items:flex-start;font-size:14px;line-height:1.45;color:#c9d6ce;padding-top:14px;border-top:1px dashed rgba(255,255,255,.08)}
+.leak .f i{font-style:normal;flex:none;width:24px;height:24px;border-radius:50%;background:rgba(46,224,122,.14);color:var(--green);display:grid;place-items:center;font-size:12px;font-weight:800;margin-top:1px}
+
+/* numbers */
+.nums{display:grid;grid-template-columns:340px 1fr;gap:14px}
+.nin .fl input{height:46px;font-size:17px;font-weight:700}
+.range{display:flex;align-items:center;gap:12px;margin-top:8px}
+.range input[type=range]{flex:1;accent-color:var(--green);height:auto;padding:0;border:0;background:none;margin:0}
+.range b{min-width:46px;text-align:right;font-size:17px}
+.nout{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}
+.stat.big{grid-column:span 3;display:grid;grid-template-columns:1fr 1fr;gap:16px;border-color:rgba(46,224,122,.35);background:linear-gradient(135deg,rgba(46,224,122,.09),rgba(46,224,122,.02))}
+.stat .l{font-size:12.5px;color:var(--mute);font-weight:600}
+.stat .v{font-size:32px;font-weight:800;letter-spacing:-.03em;margin-top:4px}
+.stat.big .v{font-size:44px}
+.stat .v.g{color:var(--green)}.stat .v.r{color:#ffb4b4}
+.stat .d{font-size:12.5px;color:#93a39a;margin-top:4px;line-height:1.45}
+.note{font-size:12.5px;color:#66756c;margin-top:12px;line-height:1.5}
+
+/* audiences */
+.auds{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.aud{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.aud .ch{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.06em;padding:3px 8px;border-radius:6px;background:rgba(255,255,255,.07);color:#c9d6ce}
+.aud h3{font-size:16.5px;letter-spacing:-.01em}
+.aud p{font-size:13.5px;color:#a9b8ae;line-height:1.5}
+.aud .w{font-size:12.5px;color:var(--green);font-weight:600;margin-top:auto;padding-top:6px}
+
+/* ads */
+.adctl{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.seg{display:flex;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:4px;flex-wrap:wrap}
+.seg button{height:36px;padding:0 14px;border-radius:9px;border:0;background:transparent;color:var(--mute);font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap}
+.seg button.on{background:rgba(46,224,122,.14);color:var(--green)}
+.adstage{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start}
+.adview{background:radial-gradient(600px 300px at 50% 0,rgba(255,255,255,.04),transparent),var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px;display:grid;place-items:center;min-height:540px}
+.why{display:flex;flex-direction:column;gap:12px}
+.why .card h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:8px}
+.why .card p{font-size:14px;line-height:1.55;color:#c9d6ce}
+.btnrow{display:flex;gap:8px}
+.btn{flex:1;height:42px;border-radius:10px;border:0;font-weight:700;font-size:13.5px;cursor:pointer}
+.btn.g{background:var(--green);color:#04130a}.btn.d{background:rgba(255,255,255,.08);color:var(--text)}
+
+/* mock: facebook */
+.fb{width:100%;max-width:420px;background:#fff;color:#050505;border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.45);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+.fbh{display:flex;gap:9px;align-items:center;padding:12px 14px 8px}
+.av{width:38px;height:38px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:800;font-size:16px;flex:none}
+.fbh b{font-size:14.5px;display:block}.fbh small{font-size:12px;color:#65676b}
+.fbt{padding:0 14px 10px;font-size:14.5px;line-height:1.42;white-space:pre-wrap}
+.creative{aspect-ratio:1/1;background:linear-gradient(145deg,var(--brand),color-mix(in srgb,var(--brand) 45%,#000));color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:26px;position:relative;overflow:hidden}
+.creative:after{content:'';position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.08)}
+.creative .em{font-size:52px;line-height:1}
+.creative .hk{font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.1;text-wrap:balance;position:relative;z-index:1}
+.creative .tag{align-self:flex-start;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.18);padding:6px 10px;border-radius:6px}
+.fbf{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;background:#f0f2f5}
+.fbf small{font-size:11.5px;color:#65676b;text-transform:uppercase;display:block}
+.fbf b{font-size:15px;display:block;line-height:1.25}
+.fbf span.cb{flex:none;background:#e4e6eb;color:#050505;font-weight:700;font-size:14px;padding:9px 13px;border-radius:6px}
+.fbr{display:flex;justify-content:space-around;padding:9px 0;color:#65676b;font-size:13.5px;font-weight:600;border-top:1px solid #e4e6eb}
+
+/* mock: google */
+.gg{width:100%;max-width:560px;background:#fff;color:#202124;border-radius:12px;padding:20px 22px;box-shadow:0 20px 60px rgba(0,0,0,.45);font-family:Arial,Helvetica,sans-serif}
+.gq{display:flex;align-items:center;gap:10px;border:1px solid #dfe1e5;border-radius:24px;height:44px;padding:0 16px;font-size:15px;margin-bottom:18px;color:#202124}
+.gq:before{content:'';width:14px;height:14px;border:2px solid #9aa0a6;border-radius:50%;flex:none}
+.gs{font-size:13px;font-weight:700;margin-bottom:6px}
+.gsite{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.gsite .av{width:28px;height:28px;font-size:12px}
+.gsite b{font-size:14px;font-weight:400;display:block}.gsite small{font-size:12px;color:#4d5156}
+.gh{color:#1a0dab;font-size:20px;line-height:1.3;margin:4px 0}
+.gd{font-size:14px;line-height:1.58;color:#4d5156}
+.gl{display:flex;gap:18px;margin-top:8px;font-size:14px;color:#1a0dab;flex-wrap:wrap}
+
+/* mock: story */
+.story{width:290px;aspect-ratio:9/16;border-radius:22px;background:linear-gradient(170deg,color-mix(in srgb,var(--brand) 80%,#fff 0%),color-mix(in srgb,var(--brand) 40%,#000));color:#fff;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);display:flex;flex-direction:column;padding:16px}
+.story .bars{display:flex;gap:4px}.story .bars i{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.4)}.story .bars i:first-child{background:#fff}
+.story .sh2{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13px;font-weight:700}
+.story .sh2 .av{width:30px;height:30px;font-size:13px;border:2px solid #fff;background:rgba(0,0,0,.25)}
+.story .sh2 small{font-weight:500;opacity:.8}
+.story .mid{flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.story .em{font-size:56px}
+.story .hk{font-size:28px;font-weight:800;letter-spacing:-.02em;line-height:1.12;text-wrap:balance}
+.story .sub{font-size:15px;opacity:.9;line-height:1.4}
+.story .sw{align-self:center;background:#fff;color:#111;font-weight:800;font-size:14px;padding:11px 20px;border-radius:999px}
+
+/* mock: linkedin */
+.li{width:100%;max-width:440px;background:#fff;color:#191919;border-radius:10px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.45);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+.li .fbh .av{border-radius:6px}
+.li .fbh small{color:#666}
+.li .creative{aspect-ratio:1.91/1;padding:22px}
+.li .creative .em{font-size:38px}.li .creative .hk{font-size:24px}
+.lif{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 14px;background:#eef3f8}
+.lif b{font-size:14.5px}.lif small{display:block;font-size:12px;color:#666}
+.lif span{flex:none;border:1.5px solid #0a66c2;color:#0a66c2;font-weight:700;font-size:14px;padding:6px 14px;border-radius:999px}
+
+/* budget */
+.budget{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.bars{display:flex;flex-direction:column;gap:16px}
+.brow .bl{display:flex;justify-content:space-between;font-size:14px;font-weight:700;margin-bottom:7px;gap:10px}
+.brow .bl span{color:var(--mute);font-weight:600}
+.brow .bt{height:12px;border-radius:99px;background:rgba(255,255,255,.06);overflow:hidden}
+.brow .bt i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--green),#7af0ad);width:0;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.brow p{font-size:12.5px;color:#93a39a;margin-top:6px}
+.ruleslist{display:flex;flex-direction:column;gap:12px}
+.rule{display:flex;gap:12px;font-size:14px;line-height:1.5;color:#c9d6ce}
+.rule i{font-style:normal;flex:none;width:26px;height:26px;border-radius:8px;background:rgba(46,224,122,.12);color:var(--green);display:grid;place-items:center;font-weight:800;font-size:13px}
+.rule b{color:#fff}
+
+/* plan */
+.plan{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.wk{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;position:relative}
+.wk .n{font-size:12px;font-weight:800;color:var(--green);letter-spacing:.12em}
+.wk h3{font-size:17px;margin:6px 0 8px;letter-spacing:-.01em}
+.wk p{font-size:13.5px;color:#a9b8ae;line-height:1.55}
+
+/* final */
+.final{margin-top:54px;border-radius:22px;padding:40px;text-align:center;background:linear-gradient(135deg,rgba(46,224,122,.14),rgba(46,224,122,.03));border:1px solid rgba(46,224,122,.35)}
+.final h2{font-size:40px;letter-spacing:-.035em;line-height:1.08;font-weight:800;text-wrap:balance}
+.final h2 span{color:var(--green)}
+.final p{color:#c9d6ce;font-size:17px;margin:14px auto 0;max-width:640px;line-height:1.5}
+.final .row{display:flex;justify-content:center;gap:12px;margin-top:24px;flex-wrap:wrap}
+.final a,.final button{height:52px;padding:0 26px;border-radius:12px;font-weight:800;font-size:16px;display:inline-flex;align-items:center;text-decoration:none;cursor:pointer;border:0}
+.final .p{background:var(--green);color:#04130a;box-shadow:0 10px 30px rgba(46,224,122,.3)}
+.final .s{background:rgba(255,255,255,.08);color:var(--text)}
+.disc{font-size:11.5px;color:#5d6b63;text-align:center;margin-top:22px;line-height:1.5}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:#15201a;border:1px solid rgba(46,224,122,.5);color:#dff7e8;padding:11px 18px;border-radius:12px;font-weight:600;font-size:14px;opacity:0;transition:.3s;z-index:60;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.snd{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--text);font-size:16px;cursor:pointer;flex:none}
+.snd:hover{border-color:rgba(46,224,122,.45)}
+.confetti{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:80}
+.shake{animation:shake .45s}
+@keyframes shake{20%,60%{transform:translateX(-7px)}40%,80%{transform:translateX(7px)}}
+.adin{animation:adin .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes adin{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+.cta{position:relative;overflow:hidden}
+.cta:after,.final .p:after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:shine 3.2s infinite}
+.final .p{position:relative;overflow:hidden}
+@keyframes shine{0%,60%{left:-60%}100%{left:130%}}
+.seg button,.btn,.ghost,.cta{transition:transform .12s, background .2s, color .2s}
+.seg button:active,.btn:active,.ghost:active,.cta:active{transform:scale(.96)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width: 1000px){
+  .introgrid{grid-template-columns:1fr;gap:28px;padding-top:14px}
+  .intro{padding:20px 18px 34px}
+  .intro h1{font-size:40px}.lead{font-size:16.5px}
+  .gets{grid-template-columns:1fr}
+  .rbar{padding:10px 16px}.rnav{padding:0 12px 8px}
+  .wrap{padding:6px 16px 50px}
+  .hero h1{font-size:32px}.hero p{font-size:15.5px}
+  .sh h2{font-size:23px}
+  .diag,.auds,.plan,.budget,.nums,.adstage{grid-template-columns:1fr}
+  .nout{grid-template-columns:1fr 1fr}
+  .stat.big{grid-column:span 2;grid-template-columns:1fr}
+  .stat.big .v{font-size:36px}
+  .adview{padding:16px;min-height:0}
+  .creative .hk{font-size:24px}
+  .final{padding:28px 18px}.final h2{font-size:28px}
+  .brandrow small{display:none}
+  .rbar .brandrow b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:62vw;font-size:15px}
+  .rbar .brandrow{min-width:0}
+  .hm{display:none}
+}
+@media (max-width: 420px){ .two{grid-template-columns:1fr} .other{display:none} }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute"><defs><symbol id="rl" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#2ee07a"/><path d="M9 28l8.5-8.5 5 5L31 15" fill="none" stroke="#04130a" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M24.5 15H31v6.5" fill="none" stroke="#04130a" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/></symbol></defs></svg>
+
+<!-- ============ INTRO ============ -->
+<section class="screen on" id="s-intro">
+  <div class="intro">
+    <div class="topline">
+      <div class="brandrow"><svg><use href="#rl"/></svg><div><b class="agencyRef">Result Labs</b><small>AI marketing &amp; lead generation</small></div></div>
+      <div style="display:flex;gap:8px;align-items:center"><a class="other" id="otherDemo" href="#">Also try: AI lead capture demo →</a><button class="snd" type="button" aria-label="Toggle sound">🔊</button></div>
+    </div>
+    <div class="introgrid">
+      <div>
+        <div class="kick">Free ad audit · 60 seconds</div>
+        <h1>Your ads aren't failing.<br><span>Your message is.</span></h1>
+        <p class="lead">Most businesses boost a post, get likes, and wonder where the customers are. Tell us about your business and get the fix: where your ad money leaks, the most you can afford per lead, and a ready-to-run campaign.</p>
+        <div class="gets">
+          <div><i>🩺</i>Where your money leaks</div>
+          <div><i>🧮</i>Your real cost-per-lead limit</div>
+          <div><i>🎯</i>Who to target, and where</div>
+          <div><i>📱</i>Ads for 4 platforms</div>
+        </div>
+      </div>
+      <div class="fcard" id="introForm">
+        <h2>Build my ad campaign</h2>
+        <p class="s">Free. No signup. Nothing is sent anywhere.</p>
+        <label class="fl">Business name<input name="business" maxlength="60" placeholder="e.g. Summit Roofing" autocomplete="organization"></label>
+        <label class="fl">What do you sell?<input name="offer" maxlength="120" placeholder="e.g. roof repairs and replacements"></label>
+        <div class="two">
+          <label class="fl">City / area <small>(optional)</small><input name="city" maxlength="50" placeholder="e.g. Austin, TX"></label>
+          <label class="fl money">Avg. sale value<input name="value" type="number" min="1" inputmode="numeric" placeholder="2500"></label>
+        </div>
+        <div class="two">
+          <label class="fl money">Monthly ad budget<input name="budget" type="number" min="0" inputmode="numeric" placeholder="1500"></label>
+          <label class="fl">Ads today
+            <select name="approach">
+              <option value="boost">I boost posts</option>
+              <option value="self">I run ads myself</option>
+              <option value="agency">An agency runs them</option>
+              <option value="none">Not running ads</option>
+            </select>
+          </label>
+        </div>
+        <button class="cta" type="button" id="buildBtn">Build my campaign →</button>
+        <div class="err" id="introErr"></div>
+        <p class="fine">Built from proven ad frameworks for your industry. The full campaign is built by <span class="agencyRef">Result Labs</span> around your real customers and data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BUILDING ============ -->
+<section class="screen" id="s-build">
+  <div class="building"><div class="bbox">
+    <div class="spinner"></div>
+    <h2>Building your campaign…</h2>
+    <div class="bsteps">
+      <div class="bs"><i>○</i>Diagnosing where your ad money leaks</div>
+      <div class="bs"><i>○</i>Running your numbers</div>
+      <div class="bs"><i>○</i>Finding your customers' pain points</div>
+      <div class="bs"><i>○</i>Writing 3 ad angles</div>
+      <div class="bs"><i>○</i>Designing ads for 4 platforms</div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============ RESULTS ============ -->
+<section class="screen" id="s-res">
+  <div class="rhead">
+    <div class="rbar">
+      <div class="brandrow"><svg><use href="#rl"/></svg><div><b id="rTitle">Campaign</b><small class="agencyRef">Result Labs</small></div></div>
+      <div style="display:flex;gap:8px"><button class="snd" type="button" aria-label="Toggle sound">🔊</button><button class="ghost" id="restart">↺ <span class="hm">Try another business</span></button></div>
+    </div>
+    <nav class="rnav" id="rnav">
+      <a href="#diagnosis">1 · Diagnosis</a><a href="#numbers">2 · Your numbers</a><a href="#audiences">3 · Audiences</a><a href="#ads">4 · Ads</a><a href="#budget">5 · Budget</a><a href="#plan">6 · 30-day plan</a>
+    </nav>
+  </div>
+  <div class="wrap">
+    <div class="hero reveal">
+      <div class="kick">Campaign ready</div>
+      <h1 id="heroT"></h1>
+      <p id="heroP"></p>
+    </div>
+
+    <section class="sec reveal" id="diagnosis">
+      <div class="sh"><div><div class="num">01 · DIAGNOSIS</div><h2 id="diagT"></h2><p id="diagP"></p></div></div>
+      <div class="diag" id="diag"></div>
+    </section>
+
+    <section class="sec reveal" id="numbers">
+      <div class="sh"><div><div class="num">02 · YOUR NUMBERS</div><h2>The number most businesses never calculate</h2><p>Before spending a dollar, know the most you can pay for a lead. Change the numbers and everything updates.</p></div></div>
+      <div class="nums">
+        <div class="card nin">
+          <label class="fl money">Average sale value<input id="nValue" type="number" min="1" inputmode="numeric"></label>
+          <label class="fl">Leads that become customers
+            <div class="range"><input id="nClose" type="range" min="1" max="80" value="20"><b id="nCloseV">20%</b></div>
+          </label>
+          <label class="fl money">Monthly ad budget<input id="nBudget" type="number" min="0" inputmode="numeric"></label>
+        </div>
+        <div class="nout">
+          <div class="stat big">
+            <div><div class="l">Break-even cost per lead</div><div class="v r" id="oMax">—</div><div class="d">Pay more than this per lead and you lose money on every customer.</div></div>
+            <div><div class="l">Your target cost per lead</div><div class="v g" id="oTarget">—</div><div class="d">Hit this and every $1 in ads brings back about $3 in sales.</div></div>
+          </div>
+          <div class="stat"><div class="l">Leads / month at target</div><div class="v" id="oLeads">—</div></div>
+          <div class="stat"><div class="l">New customers / month</div><div class="v" id="oCust">—</div></div>
+          <div class="stat"><div class="l">Sales / month</div><div class="v g" id="oRev">—</div></div>
+        </div>
+      </div>
+      <p class="note">Simple math from your inputs: break-even = sale value × close rate; target = break-even ÷ 3. Monthly figures assume you hit the target cost per lead.</p>
+    </section>
+
+    <section class="sec reveal" id="audiences">
+      <div class="sh"><div><div class="num">03 · AUDIENCES</div><h2>Who sees your ads</h2><p>Four audiences, each with a different job. Most businesses run one, which is why their ads speak to nobody.</p></div></div>
+      <div class="auds" id="auds"></div>
+    </section>
+
+    <section class="sec reveal" id="ads">
+      <div class="sh"><div><div class="num">04 · YOUR ADS</div><h2>Three angles, four platforms</h2><p>Same offer, three different messages. You run all three, and the numbers pick the winner.</p></div></div>
+      <div class="adctl">
+        <div class="seg" id="angleSeg"></div>
+        <div class="seg" id="platSeg"></div>
+      </div>
+      <div class="adstage">
+        <div class="adview" id="adview"></div>
+        <div class="why">
+          <div class="card"><h4 id="whyH">Why this angle works</h4><p id="whyP"></p></div>
+          <div class="card"><h4>Best for</h4><p id="bestP"></p></div>
+          <div class="btnrow"><button class="btn d" id="another">↻ Another version</button><button class="btn g" id="copy">Copy ad text</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec reveal" id="budget">
+      <div class="sh"><div><div class="num">05 · BUDGET</div><h2 id="budT">Where your budget goes</h2><p>Split by job: catch people already searching, reach new ones, and win back the ones who almost bought.</p></div></div>
+      <div class="budget">
+        <div class="card bars" id="bars"></div>
+        <div class="card ruleslist" id="rules"></div>
+      </div>
+    </section>
+
+    <section class="sec reveal" id="plan">
+      <div class="sh"><div><div class="num">06 · 30-DAY PLAN</div><h2>From launch to a winning ad</h2><p>No guessing. Each week has one job.</p></div></div>
+      <div class="plan" id="planG"></div>
+    </section>
+
+    <div class="final reveal">
+      <h2 id="finT"></h2>
+      <p id="finP"></p>
+      <div class="row"><a class="p" id="finCta" target="_blank" rel="noopener">Book a call</a><button class="s" id="finRestart">Try another business</button></div>
+    </div>
+    <p class="disc">Generated from proven ad frameworks for your industry, with your numbers. Not a guarantee of results. A real campaign is built around your actual customers, offer and data.</p>
+  </div>
+</section>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ====== EDIT THESE FOR YOUR AGENCY ====== */
+const CONFIG = {
+  agency: 'Result Labs',
+  ctaUrl: 'https://calendly.com/YOUR-LINK',     // booking link for the final button
+  dmWord: 'ADS',                                // used when no booking link is set
+  otherDemoUrl: 'https://demos-production-4531e2c6.up.railway.app/',
+};
+/* ======================================== */
+
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => [...document.querySelectorAll(s)];
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+const money = (n) => { n = Number(n) || 0; return '$' + (n >= 100 ? Math.round(n).toLocaleString('en-US') : n.toFixed(n < 10 ? 2 : 0)); };
+const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+const an = (s) => (/^[aeiou]/i.test(s) ? 'an ' : 'a ') + s;
+
+$$('.agencyRef').forEach((e) => (e.textContent = CONFIG.agency));
+$('#otherDemo').href = CONFIG.otherDemoUrl;
+setTimeout(() => syncSoundBtns(), 0);
+
+/* ---------- industry knowledge ---------- */
+const IND = [
+  { k: /driving school|auto-?[ée]cole|tutor|academy|lessons?|course|language school|music school|coaching program/i,
+    noun: 'parents and new drivers', mix: 'social', em: '🎓', color: '#16a34a', cta: 'Sign Up',
+    a1: { t: 'Parents of teens', d: 'Parents 38–55{near}, with kids aged 15–18.', ch: 'Meta' },
+    a2: { t: 'Students & young adults', d: 'Ages 17–24{near}, interested in learning and independence.', ch: 'Instagram + TikTok' },
+    pains: ['Waiting months for a spot.', 'Paying for lessons that don\'t get results.', 'Instructors who don\'t explain anything.'],
+    painHooks: ['Still waiting months to start?', 'Tired of lessons that go nowhere?'],
+    outcomes: ['real progress every week', 'a clear plan from day one', 'passing the first time'],
+    outHooks: ['Pass the first time. With confidence.', 'From zero to ready, faster than you think.'],
+    offer: 'Free first lesson', offerHooks: ['Your first lesson is on us.', 'Try a free lesson this week.'],
+    bullets: ['Flexible times, evenings and weekends', 'A clear plan from the first lesson'] },
+  { k: /roof|plumb|hvac|heating|air condition|electric|remodel|renovat|construct|contractor|landscap|painting|painter|floor|solar|window|kitchen|bath|pool|fenc|handyman|pest|gutter|siding|concrete|deck/i,
+    noun: 'homeowners', mix: 'local', em: '🏠', color: '#ea580c', cta: 'Get Quote',
+    a1: { t: 'Local homeowners', d: 'Homeowners 30–65{near}, interested in home improvement and DIY.', ch: 'Meta' },
+    a2: { t: 'New movers', d: 'People who moved into a home{near} in the last 6 months, the first big-job window.', ch: 'Meta' },
+    pains: ['That small problem quietly turns into a big repair bill.', 'Contractors who never call back.', 'Surprise costs halfway through the job.'],
+    painHooks: ['Still putting off that repair?', 'Tired of contractors who never call back?'],
+    outcomes: ['a clear price before any work starts', 'a crew that shows up when they say', 'a job done right the first time'],
+    outHooks: ['Done on time. Done on budget. Done right.', 'Picture it fixed by next week.'],
+    offer: 'Free on-site estimate', offerHooks: ['Free estimate. Clear price. No pressure.', 'Get your exact price this week, free.'],
+    bullets: ['Exact price before any work starts', 'Fast scheduling, often this week'] },
+  { k: /dent|clinic|med ?spa|aesthetic|derma|chiro|physio|therap|doctor|health|vet|botox|laser|orthodon|optometr/i,
+    noun: 'patients', mix: 'local', em: '✨', color: '#0891b2', cta: 'Book Now',
+    a1: { t: 'Local adults 25–60', d: 'Adults{near} interested in health, wellness and self-care.', ch: 'Meta' },
+    a2: { t: 'Busy professionals', d: 'Working adults{near} who need early, late or weekend appointments.', ch: 'Meta + Instagram' },
+    pains: ['Putting it off because booking is a hassle.', 'Waiting weeks for an appointment.', 'Not knowing what it will cost.'],
+    painHooks: ['Been putting it off for months?', 'Tired of waiting weeks for an appointment?'],
+    outcomes: ['an appointment this week', 'clear pricing upfront', 'a team that actually listens'],
+    outHooks: ['Feel confident again. Starting this week.', 'The care you\'ve been putting off, made easy.'],
+    offer: 'Free consultation', offerHooks: ['Your consultation is on us.', 'Book a free consultation in 60 seconds.'],
+    bullets: ['Appointments this week', 'Clear pricing before anything starts'] },
+  { k: /\blaw\b|legal|attorney|lawyer|notary|paralegal/i,
+    noun: 'clients', mix: 'local', em: '⚖️', color: '#334155', cta: 'Learn More',
+    a1: { t: 'People facing a legal issue', d: 'Adults{near} who recently engaged with legal-help content.', ch: 'Meta' },
+    a2: { t: 'Business owners', d: 'Owners and managers{near} at small and mid-size companies.', ch: 'LinkedIn' },
+    pains: ['Not knowing your options, and losing sleep over it.', 'Lawyers who are impossible to reach.', 'Fear of the bill before you even start.'],
+    painHooks: ['Not sure where you stand?', 'Can\'t get a lawyer to call you back?'],
+    outcomes: ['clear answers in plain English', 'a lawyer who picks up the phone', 'a plan before you spend a cent'],
+    outHooks: ['Know exactly where you stand. Today.', 'Clear answers. A real plan. Peace of mind.'],
+    offer: 'Free case review', offerHooks: ['Talk to an attorney today, free.', 'Get a free case review this week.'],
+    bullets: ['Speak to an attorney, not a call center', 'Know your options before you pay anything'] },
+  { k: /real ?estate|realtor|realty|property|properties|mortgage|broker|homes for sale/i,
+    noun: 'buyers and sellers', mix: 'social', em: '🔑', color: '#9333ea', cta: 'Learn More',
+    a1: { t: 'Likely sellers', d: 'Homeowners 35–65{near} who have lived in their home 7+ years.', ch: 'Meta' },
+    a2: { t: 'First-time buyers', d: 'Renters 25–40{near} browsing listings and mortgage content.', ch: 'Meta + Instagram' },
+    pains: ['Not knowing what your home is really worth.', 'Listings that sit for months.', 'Losing out on homes to faster offers.'],
+    painHooks: ['What is your home really worth?', 'Tired of losing out on homes?'],
+    outcomes: ['a price backed by real local data', 'a plan to sell fast', 'an agent who answers on weekends'],
+    outHooks: ['Sell faster. For more.', 'Find the one, before someone else does.'],
+    offer: 'Free home valuation', offerHooks: ['Find out what your home is worth, free.', 'Get your free valuation in 24 hours.'],
+    bullets: ['A price based on real local sales', 'No obligation to list'] },
+  { k: /restaurant|cater|food|bakery|cafe|café|sandwich|pizza|\bbar\b|event|wedding|venue|florist|\bdj\b|photograph/i,
+    noun: 'event planners and office managers', mix: 'social', em: '🍽️', color: '#d9622b', cta: 'Order Now',
+    a1: { t: 'Office managers', d: 'Office and admin managers{near}, the people who order team lunches.', ch: 'Meta + LinkedIn' },
+    a2: { t: 'Event planners', d: 'People{near} engaged, planning a party, or recently interested in events.', ch: 'Meta + Instagram' },
+    pains: ['Ordering for a group is a last-minute headache.', 'Food that shows up late, or cold.', 'Nobody happy with the menu.'],
+    painHooks: ['Planning food for a group again?', 'Done with late, cold catering?'],
+    outcomes: ['food everyone actually likes', 'on time, every time', 'one order, zero stress'],
+    outHooks: ['The lunch your team will talk about.', 'Feed everyone. Stress about nothing.'],
+    offer: 'Free tasting box', offerHooks: ['Try us first: free tasting box.', 'First group order? Dessert\'s on us.'],
+    bullets: ['On time, every time', 'Menus for every diet'] },
+  { k: /gym|fitness|coach|training|yoga|pilates|martial|boxing|nutrition|crossfit|wellness/i,
+    noun: 'people ready to get in shape', mix: 'social', em: '💪', color: '#7c3aed', cta: 'Sign Up',
+    a1: { t: 'Fitness restarters', d: 'Adults 25–50{near} interested in fitness, healthy eating and weight loss.', ch: 'Meta + Instagram' },
+    a2: { t: 'New Year / new season', d: 'Same audience, pushed harder in January, spring and September, when motivation peaks.', ch: 'Meta' },
+    pains: ['Paying for a gym you never use.', 'Starting over every Monday.', 'Workouts with no plan and no results.'],
+    painHooks: ['Starting over again on Monday?', 'Paying for a gym you never go to?'],
+    outcomes: ['a plan built for you', 'a coach who keeps you accountable', 'results you can see in 30 days'],
+    outHooks: ['30 days from now, you\'ll be glad you started.', 'The last time you\'ll ever "start over."'],
+    offer: 'Free intro session', offerHooks: ['Your first session is free.', 'Try a free session this week.'],
+    bullets: ['A plan built around your goal', 'A coach who keeps you on track'] },
+  { k: /clean|maid|janitor|laundry|moving|movers|junk|pressure wash/i,
+    noun: 'busy households and offices', mix: 'local', em: '🧽', color: '#0d9488', cta: 'Get Quote',
+    a1: { t: 'Busy homeowners', d: 'Dual-income households 30–55{near}.', ch: 'Meta' },
+    a2: { t: 'Office managers', d: 'Office and facility managers{near}.', ch: 'Meta + LinkedIn' },
+    pains: ['Spending your weekend cleaning.', 'Cleaners who cancel last minute.', 'Paying for a "deep clean" that wasn\'t.'],
+    painHooks: ['Spending another weekend cleaning?', 'Tired of cleaners who cancel?'],
+    outcomes: ['your weekends back', 'the same trusted team every time', 'a spotless place, every visit'],
+    outHooks: ['Come home to clean. Every time.', 'Get your weekends back.'],
+    offer: 'Free instant quote', offerHooks: ['Get your price in 60 seconds.', 'Your first clean, done right.'],
+    bullets: ['Same trusted team every visit', 'Book online in 60 seconds'] },
+  { k: /car\b|cars|auto|dealer|mechanic|tire|tyre|detailing|garage|body shop/i,
+    noun: 'drivers', mix: 'local', em: '🚗', color: '#dc2626', cta: 'Learn More',
+    a1: { t: 'In-market car buyers', d: 'Adults{near} browsing car listings and financing content.', ch: 'Meta + Google' },
+    a2: { t: 'Local drivers', d: 'Drivers 25–60{near}, for service, repairs and upgrades.', ch: 'Meta' },
+    pains: ['Not knowing if you\'re getting a fair price.', 'Hours wasted at the dealership.', 'Surprise fees at the end.'],
+    painHooks: ['Worried you\'re overpaying?', 'Tired of surprise fees?'],
+    outcomes: ['a fair price, upfront', 'in and out fast', 'no surprises at the end'],
+    outHooks: ['The easiest car deal you\'ll ever make.', 'Upfront price. No games.'],
+    offer: 'Free quote', offerHooks: ['Get your price before you visit.', 'Free quote in minutes.'],
+    bullets: ['Upfront pricing, no surprise fees', 'Fast, no-pressure visits'] },
+  { k: /software|saas|agency|marketing|seo|website|web design|\bapp\b|automation|\bai\b|consult|\bit\b|recruit|staffing|accounting|bookkeep|insurance|b2b/i,
+    noun: 'business owners', mix: 'b2b', em: '📈', color: '#2563eb', cta: 'Learn More', b2b: true,
+    a1: { t: 'Decision makers', d: 'Owners, founders and directors at companies with 10–200 employees{near}.', ch: 'LinkedIn' },
+    a2: { t: 'Problem-aware managers', d: 'Managers who follow topics related to your service and competitors.', ch: 'LinkedIn + Meta' },
+    pains: ['Paying for tools and people that don\'t move the numbers.', 'Projects that drag on for months.', 'No clear return on what you spend.'],
+    painHooks: ['Still paying for results you never see?', 'Another quarter of "almost there"?'],
+    outcomes: ['measurable results in 90 days', 'a partner who owns the outcome', 'clear reporting you actually understand'],
+    outHooks: ['What would 90 days of real results be worth?', 'Stop guessing. Start growing.'],
+    offer: 'Free strategy call', offerHooks: ['Get a free 20-minute strategy call.', 'See your growth plan, free.'],
+    bullets: ['A clear plan in 20 minutes', 'No pitch, just a plan'] },
+];
+const DEF = { noun: 'customers', mix: 'local', em: '⭐', color: '#2563eb', cta: 'Learn More',
+  a1: { t: 'Your ideal customers', d: 'Adults{near} interested in what you sell.', ch: 'Meta' },
+  a2: { t: 'Lookalikes of your best customers', d: 'People who resemble your existing customers. Upload your customer list to build it.', ch: 'Meta' },
+  pains: ['Wasting time on providers who don\'t deliver.', 'Not knowing what it will really cost.', 'Slow answers when you need help now.'],
+  painHooks: ['Still looking for someone reliable?', 'Tired of slow answers?'],
+  outcomes: ['fast answers', 'a clear price upfront', 'a team that delivers'],
+  outHooks: ['Finally, someone who gets it done.', 'The easy way to get it done right.'],
+  offer: 'Free quote', offerHooks: ['Get a free quote today.', 'Your free quote in 60 seconds.'],
+  bullets: ['Clear price upfront', 'Fast response, usually same day'] };
+
+const DIAG = {
+  boost: { t: 'You\'re paying for likes, not customers.', p: 'The 3 most common leaks when a business grows with boosted posts, and the fix for each.',
+    leaks: [['Boosted posts are optimized for likes and reach, not leads.', 'Run lead-objective campaigns that optimize for people who fill out a form or call.'],
+            ['Everyone sees the same message, so it speaks to no one.', 'Three angles (pain, outcome, offer) aimed at three different audiences.'],
+            ['People who clicked once never see you again.', 'Retargeting: show a follow-up offer to everyone who visited but didn\'t book.']] },
+  self: { t: 'Your ads are running. Your system isn\'t.', p: 'The 3 most common leaks when owners run their own ads, and the fix for each.',
+    leaks: [['Ads send people to your homepage, where they get lost.', 'A dedicated page with one offer and one button, matching the ad.'],
+            ['One ad has been running for months. No testing, no winner.', 'Launch 3 angles at once, kill the losers in week 2, scale the winner.'],
+            ['No target cost per lead, so you can\'t tell if it\'s working.', 'Know your break-even and target cost per lead before you spend (section 2).']] },
+  agency: { t: 'Your reports show clicks. Your bank shows nothing.', p: 'The 3 most common leaks with agency-run ads, and the fix for each.',
+    leaks: [['Reports focus on clicks and impressions instead of cost per customer.', 'Judge every ad on one number: cost per lead vs. your target.'],
+            ['Generic copy that could fit any business in your industry.', 'Ads built on your customers\' real pains and your specific offer.'],
+            ['Nobody follows up with leads fast, so paid leads go cold.', 'Instant follow-up and retargeting, so every lead you pay for gets worked.']] },
+  none: { t: 'Your competitors are buying your customers.', p: 'What it costs to rely on word of mouth alone, and the fix for each.',
+    leaks: [['People searching for what you sell right now are finding someone else.', 'Google Search ads on high-intent searches in your area.'],
+            ['Referrals come in waves: good months, then dry months.', 'A steady, predictable flow of leads you can turn up or down.'],
+            ['No way to stay in front of people who aren\'t ready yet.', 'Retargeting keeps you top of mind until they are.']] },
+};
+
+const MIX = {
+  local: [['Google Search', 45, 'Catch people already searching for you'], ['Facebook + Instagram', 35, 'Reach your ideal customers before they search'], ['Retargeting', 20, 'Win back visitors who didn\'t book']],
+  social: [['Facebook + Instagram', 55, 'Your main engine: reach and test angles'], ['Google Search', 25, 'Capture the ones already searching'], ['Retargeting', 20, 'Win back visitors who didn\'t book']],
+  b2b: [['LinkedIn', 40, 'Reach decision makers by job title'], ['Google Search', 35, 'Capture companies already looking'], ['Retargeting', 25, 'Stay in front of long sales cycles']],
+};
+
+/* ---------- sound (Web Audio, no files) ---------- */
+const SFX = (() => {
+  let ctx = null, on = true;
+  try { on = localStorage.getItem('rl_sound') !== 'off'; } catch {}
+  const ac = () => {
+    if (!ctx) { const C = window.AudioContext || window.webkitAudioContext; if (!C) return null; try { ctx = new C(); } catch { return null; } }
+    if (ctx.state === 'suspended') ctx.resume().catch(() => {});
+    return ctx;
+  };
+  function tone(f, t = 0, d = 0.12, type = 'sine', v = 0.08, f2) {
+    const c = ac(); if (!c || !on) return;
+    const o = c.createOscillator(), g = c.createGain(), s = c.currentTime + t;
+    o.type = type; o.frequency.setValueAtTime(f, s); if (f2) o.frequency.exponentialRampToValueAtTime(f2, s + d);
+    g.gain.setValueAtTime(0.0001, s); g.gain.exponentialRampToValueAtTime(v, s + 0.012); g.gain.exponentialRampToValueAtTime(0.0001, s + d);
+    o.connect(g).connect(c.destination); o.start(s); o.stop(s + d + 0.03);
+  }
+  function noise(t = 0, d = 0.28, v = 0.08, f = 500, f2 = 2500) {
+    const c = ac(); if (!c || !on) return;
+    const n = Math.floor(c.sampleRate * d), buf = c.createBuffer(1, n, c.sampleRate), x = buf.getChannelData(0);
+    for (let i = 0; i < n; i++) x[i] = (Math.random() * 2 - 1) * Math.sin(Math.PI * i / n);
+    const src = c.createBufferSource(), bp = c.createBiquadFilter(), g = c.createGain(), s = c.currentTime + t;
+    src.buffer = buf; bp.type = 'bandpass'; bp.Q.value = 1.2; bp.frequency.setValueAtTime(f, s); bp.frequency.exponentialRampToValueAtTime(f2, s + d);
+    g.gain.value = v; src.connect(bp).connect(g).connect(c.destination); src.start(s);
+  }
+  let lastTick = 0;
+  return {
+    click: () => { tone(880, 0, 0.06, 'triangle', 0.07); tone(1320, 0.03, 0.05, 'triangle', 0.04); },
+    blip: (i) => tone(523 * Math.pow(1.1225, i * 2), 0, 0.16, 'sine', 0.09),
+    tick: () => { const n = performance.now(); if (n - lastTick < 55) return; lastTick = n; tone(1500, 0, 0.025, 'square', 0.018); },
+    switch: () => { tone(660, 0, 0.07, 'triangle', 0.06, 990); },
+    whoosh: () => noise(0, 0.32, 0.14, 350, 3200),
+    pop: () => { tone(500, 0, 0.09, 'sine', 0.1, 1100); tone(1400, 0.06, 0.08, 'sine', 0.04); },
+    error: () => { tone(220, 0, 0.12, 'square', 0.04); tone(180, 0.1, 0.16, 'square', 0.04); },
+    success: () => { [523.25, 659.25, 783.99, 1046.5].forEach((f, i) => tone(f, i * 0.085, 0.42, 'triangle', 0.075)); noise(0.3, 0.5, 0.04, 2000, 8000); },
+    cash: () => { tone(1318.5, 0, 0.09, 'square', 0.035); tone(1760, 0.07, 0.35, 'triangle', 0.07); noise(0, 0.12, 0.06, 3000, 6000); },
+    reveal: () => tone(392, 0, 0.18, 'sine', 0.035, 587),
+    toggle() { on = !on; try { localStorage.setItem('rl_sound', on ? 'on' : 'off'); } catch {} if (on) this.click(); return on; },
+    get on() { return on; },
+  };
+})();
+function syncSoundBtns() { $$('.snd').forEach((b) => { b.textContent = SFX.on ? '🔊' : '🔇'; b.title = SFX.on ? 'Sound on' : 'Sound off'; }); }
+document.addEventListener('click', (e) => { if (e.target.closest('.snd')) { SFX.toggle(); syncSoundBtns(); } });
+
+/* ---------- confetti ---------- */
+function confetti() {
+  const cv = document.createElement('canvas'); cv.className = 'confetti'; document.body.appendChild(cv);
+  const dpr = window.devicePixelRatio || 1, W = innerWidth, H = innerHeight;
+  cv.width = W * dpr; cv.height = H * dpr; const g = cv.getContext('2d'); g.scale(dpr, dpr);
+  const cols = ['#2ee07a', '#7af0ad', '#ffffff', getComputedStyle(document.documentElement).getPropertyValue('--brand').trim() || '#2563eb', '#f5a524'];
+  const P = Array.from({ length: 160 }, (_, i) => ({ x: W / 2 + (Math.random() - 0.5) * 120, y: H * 0.35, vx: (Math.random() - 0.5) * 16, vy: -Math.random() * 15 - 5, r: Math.random() * 6 + 4, a: Math.random() * 6, va: (Math.random() - 0.5) * 0.4, c: cols[i % cols.length] }));
+  const t0 = performance.now();
+  (function frame(t) {
+    const dt = t - t0; g.clearRect(0, 0, W, H);
+    for (const p of P) { p.vy += 0.42; p.vx *= 0.99; p.x += p.vx; p.y += p.vy; p.a += p.va; g.save(); g.translate(p.x, p.y); g.rotate(p.a); g.globalAlpha = Math.max(0, 1 - dt / 2600); g.fillStyle = p.c; g.fillRect(-p.r / 2, -p.r / 4, p.r, p.r / 2); g.restore(); }
+    if (dt < 2600) requestAnimationFrame(frame); else cv.remove();
+  })(t0);
+}
+
+/* ---------- count-up numbers ---------- */
+function countUp(el, to, fmt, dur = 1100) {
+  const t0 = performance.now();
+  (function f(t) { const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3); el.textContent = fmt(to * e); if (k < 1) requestAnimationFrame(f); else el.textContent = fmt(to); })(t0);
+}
+
+/* ---------- state ---------- */
+const st = { p: null, angle: 0, plat: 'fb', ver: 0 };
+
+function buildPlan(v) {
+  const ind = IND.find((i) => i.k.test(`${v.offer} ${v.business}`)) || DEF;
+  const core = (v.offer.split(/\s+(?:and|&|for|to|in|with)\s+|,|\//i)[0] || v.offer).trim().toLowerCase().split(/\s+/).slice(0, 4).join(' ');
+  return { ...v, ind, core, value: Number(v.value) || 2500, budget: Number(v.budget) || 1500, near: v.city ? ` within 15 miles of ${v.city}` : ' in your service area' };
+}
+
+/* ---------- intro ---------- */
+let building = false;
+async function startBuild() {
+  if (building) return;
+  const v = {};
+  $$('#introForm [name]').forEach((el) => (v[el.name] = String(el.value).trim()));
+  if (!v.business || !v.offer) { $('#introErr').textContent = 'Add your business name and what you sell.'; SFX.error(); shake($('#introForm')); return; }
+  $('#introErr').textContent = '';
+  building = true; SFX.click();
+  st.p = buildPlan(v); st.angle = 0; st.plat = 'fb'; st.ver = 0;
+  show('s-build');
+  const rows = $$('.bs');
+  rows.forEach((r) => { r.className = 'bs'; r.querySelector('i').textContent = '○'; });
+  for (const [i, r] of rows.entries()) { r.classList.add('on'); r.querySelector('i').textContent = '◐'; SFX.blip(i); await wait(620); r.classList.replace('on', 'done'); r.querySelector('i').textContent = '✓'; }
+  await wait(200);
+  render(); show('s-res');
+  SFX.success(); confetti();
+  building = false;
+}
+$('#buildBtn').addEventListener('click', startBuild);
+$$('#introForm input').forEach((el) => el.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); startBuild(); } }));
+function shake(el) { el.classList.remove('shake'); void el.offsetWidth; el.classList.add('shake'); }
+function show(id) { $$('.screen').forEach((s) => s.classList.toggle('on', s.id === id)); scrollTo(0, 0); }
+$('#restart').addEventListener('click', () => { SFX.click(); show('s-intro'); });
+$('#finRestart').addEventListener('click', () => { SFX.click(); show('s-intro'); });
+$('#finCta').addEventListener('click', () => SFX.cash());
+
+/* ---------- render ---------- */
+function render() {
+  const p = st.p, ind = p.ind;
+  document.documentElement.style.setProperty('--brand', ind.color);
+  $('#rTitle').textContent = `Campaign for ${p.business}`;
+  $('#heroT').innerHTML = `Here's how <span>${esc(p.business)}</span> turns ad spend into customers.`;
+  $('#heroP').textContent = `Built for ${p.core}${p.city ? ' in ' + p.city : ''}: what's leaking today, what you can afford per lead, who to target, and the ads to run.`;
+
+  // diagnosis
+  const d = DIAG[p.approach] || DIAG.boost;
+  $('#diagT').textContent = d.t; $('#diagP').textContent = d.p;
+  $('#diag').innerHTML = d.leaks.map(([x, f]) => `<div class="leak"><div class="x"><i>✕</i><span>${esc(x)}</span></div><div class="f"><i>✓</i><span>${esc(f)}</span></div></div>`).join('');
+
+  // numbers
+  $('#nValue').value = p.value; $('#nBudget').value = p.budget; $('#nClose').value = 20; calc(false); st.numbersShown = false;
+
+  // audiences
+  const near = (s) => s.replace('{near}', p.near);
+  const auds = [ind.a1, ind.a2,
+    { t: 'High-intent searchers', d: `People searching "${p.core} near me"${p.city ? ' or "' + p.core + ' ' + p.city + '"' : ''} right now.`, ch: 'Google Search' },
+    { t: 'Warm retargeting', d: 'Everyone who visited your site or watched half your video in the last 30 days, but didn\'t book.', ch: 'Meta + Google' }];
+  const jobs = ['Biggest reach, test your angles here', 'Your second-best bet, test after week 1', 'Highest intent, cheapest customers', 'Cheapest leads you\'ll ever get'];
+  $('#auds').innerHTML = auds.map((a, i) => `<div class="aud"><span class="ch">${esc(a.ch)}</span><h3>${esc(a.t)}</h3><p>${esc(near(a.d))}</p><div class="w">→ ${jobs[i]}</div></div>`).join('');
+
+  // ads controls
+  const plats = [['fb', 'Facebook / Instagram'], ['google', 'Google Search'], ['story', 'IG / FB Story']];
+  if (ind.b2b) plats.push(['li', 'LinkedIn']);
+  $('#angleSeg').innerHTML = ['😣 Pain', '🌟 Dream outcome', '🎁 Offer'].map((l, i) => `<button data-a="${i}" class="${i === st.angle ? 'on' : ''}">${l}</button>`).join('');
+  $('#platSeg').innerHTML = plats.map(([k, l]) => `<button data-p="${k}" class="${k === st.plat ? 'on' : ''}">${l}</button>`).join('');
+  renderAd();
+
+  // budget
+  const mix = MIX[ind.mix];
+  $('#budT').textContent = `Where your ${money(p.budget)} goes each month`;
+  $('#bars').innerHTML = mix.map(([n, pct, why]) => `<div class="brow"><div class="bl"><b>${n}</b><span>${pct}% · ${money(p.budget * pct / 100)}/mo</span></div><div class="bt"><i data-w="${pct}"></i></div><p>${why}</p></div>`).join('');
+  $('#rules').innerHTML = [
+    ['1', `<b>Start with 70% of the budget</b> while you test. Keep 30% to scale the winner.`],
+    ['2', `<b>Give each ad 3–5 days</b> before judging. Early numbers lie.`],
+    ['3', `<b>Kill any ad above your target</b> cost per lead (<span id="ruleT">${money(target())}</span>).`],
+    ['4', `<b>Never send ads to your homepage.</b> One page, one offer: "${esc(ind.offer)}".`],
+  ].map(([n, h]) => `<div class="rule"><i>${n}</i><div>${h}</div></div>`).join('');
+
+  // plan
+  const weeks = [
+    ['Launch & test', `Run all 3 angles to "${ind.a1.t}" with 70% of the budget. Same offer (${ind.offer.toLowerCase()}), different message.`],
+    ['Kill the losers', `Turn off every ad above your target cost per lead. Keep the best angle. Add "${ind.a2.t}" as a second audience.`],
+    ['Scale the winner', `Move budget to the winning angle. Launch Google Search on "${p.core} near me" to catch people already looking.`],
+    ['Close the loop', `Retarget everyone who clicked but didn't book with the offer, and follow up every lead within 5 minutes.`],
+  ];
+  $('#planG').innerHTML = weeks.map(([h, t], i) => `<div class="wk"><div class="n">WEEK ${i + 1}</div><h3>${h}</h3><p>${esc(t)}</p></div>`).join('');
+
+  // final
+  $('#finT').innerHTML = `Want this campaign <span>live next week?</span>`;
+  $('#finP').textContent = `${CONFIG.agency} builds it for ${p.business}: the ads, the landing page, the tracking, and instant follow-up on every lead, so you only pay for results you can see.`;
+  const cta = $('#finCta');
+  if (/YOUR-LINK/.test(CONFIG.ctaUrl)) { cta.removeAttribute('href'); cta.style.cursor = 'default'; cta.textContent = `DM “${CONFIG.dmWord}” to ${CONFIG.agency} →`; }
+  else { cta.href = CONFIG.ctaUrl; cta.textContent = 'Book a free strategy call →'; }
+
+  observe();
+}
+
+/* ---------- numbers ---------- */
+function vals() { return { v: Math.max(0, Number($('#nValue').value) || 0), c: Number($('#nClose').value) || 0, b: Math.max(0, Number($('#nBudget').value) || 0) }; }
+function target() { const { v, c } = vals(); return v * c / 100 / 3; }
+function calc(animate) {
+  const { v, c, b } = vals();
+  $('#nCloseV').textContent = c + '%';
+  const max = v * c / 100, tgt = max / 3;
+  const leads = tgt > 0 ? b / tgt : 0, cust = leads * c / 100, rev = cust * v;
+  const fl = (n) => Math.floor(n).toLocaleString('en-US'), cu = (n) => (cust >= 10 ? Math.round(n) : n.toFixed(1));
+  const set = [['#oMax', max, money], ['#oTarget', tgt, money], ['#oLeads', leads, fl], ['#oCust', cust, cu], ['#oRev', rev, money]];
+  set.forEach(([id, n, f]) => (animate ? countUp($(id), n, f) : ($(id).textContent = f(n))));
+  const r = $('#ruleT'); if (r) r.textContent = money(tgt);
+}
+['#nValue', '#nClose', '#nBudget'].forEach((s) => $(s).addEventListener('input', () => { calc(false); SFX.tick(); }));
+
+/* ---------- ads ---------- */
+function adCopy() {
+  const p = st.p, ind = p.ind, v = st.ver % 2;
+  const where = p.city ? ` in ${p.city}` : '';
+  const A = [
+    { name: 'Pain', hook: ind.painHooks[v], sub: ind.pains[v],
+      text: `${ind.painHooks[v]}\n\n${ind.pains[0]} ${ind.pains[1]} ${ind.pains[2]}\n\n${p.business} fixes that${where}. Start with ${an(ind.offer.toLowerCase())}, no obligation.\n\n👉 Tap "${ind.cta}" to grab your spot.`,
+      why: `People act faster to stop a pain than to chase a gain. This ad names the exact frustration your ${ind.noun} already feel, so it stops the scroll and makes your offer the obvious relief.`,
+      best: 'Cold audiences who don\'t know you yet, and anyone who has been putting the problem off.' },
+    { name: 'Dream outcome', hook: ind.outHooks[v], sub: cap(ind.outcomes[v]) + '.',
+      text: `${ind.outHooks[v]}\n\nThat's what ${ind.noun} who choose ${p.business} get:\n✔ ${cap(ind.outcomes[0])}\n✔ ${cap(ind.outcomes[1])}\n✔ ${cap(ind.outcomes[2])}\n\nStart with ${an(ind.offer.toLowerCase())}. 👉 Tap "${ind.cta}".`,
+      why: 'Instead of selling the service, it sells the "after": the life once the problem is solved. It works best on people who already know they need it and are choosing who to go with.',
+      best: 'Warm audiences and people comparing options. Pair it with your best photos or a short video.' },
+    { name: 'Offer', hook: ind.offerHooks[v], sub: ind.offer,
+      text: `${ind.offerHooks[v]}\n\n✔ ${ind.bullets[0]}\n✔ ${ind.bullets[1]}\n✔ No pressure, no obligation\n\nIt takes 60 seconds to book. 👉 Tap "${ind.cta}".`,
+      why: 'A low-risk first step removes the biggest objection: "what if it\'s not worth it?" The easier the first yes, the cheaper your leads.',
+      best: 'Retargeting people who visited but didn\'t book, and high-intent audiences ready to act.' },
+  ];
+  return A[st.angle];
+}
+function googleAd() {
+  const p = st.p, ind = p.ind, a = adCopy();
+  const h = [cap(p.core).slice(0, 30), ind.offer.slice(0, 30), p.city ? `Serving ${p.city}`.slice(0, 30) : 'Book in 60 Seconds'];
+  const d = `${a.sub} ${ind.bullets[0]}. ${ind.offer}, no obligation. Book online in 60 seconds.`;
+  return { h, d, q: `${p.core} near me` };
+}
+function domain() { return (st.p.business.toLowerCase().replace(/[^a-z0-9]+/g, '').slice(0, 22) || 'yourbusiness') + '.com'; }
+
+function renderAd() {
+  const p = st.p, ind = p.ind, a = adCopy(), L = esc(p.business.trim()[0] || 'B').toUpperCase();
+  let html = '';
+  if (st.plat === 'fb') html = `
+    <div class="fb">
+      <div class="fbh"><div class="av">${L}</div><div><b>${esc(p.business)}</b><small>Sponsored · 🌐</small></div></div>
+      <div class="fbt">${esc(a.text)}</div>
+      <div class="creative"><span class="tag">${esc(ind.offer)}</span><div><div class="em">${ind.em}</div><div class="hk">${esc(a.hook)}</div></div></div>
+      <div class="fbf"><div><small>${esc(domain())}</small><b>${esc(a.name === 'Offer' ? ind.offer : a.hook)}</b></div><span class="cb">${esc(ind.cta)}</span></div>
+      <div class="fbr"><span>👍 Like</span><span>💬 Comment</span><span>↗ Share</span></div>
+    </div>`;
+  else if (st.plat === 'google') { const g = googleAd(); html = `
+    <div class="gg">
+      <div class="gq">${esc(g.q)}</div>
+      <div class="gs">Sponsored</div>
+      <div class="gsite"><div class="av">${L}</div><div><b>${esc(p.business)}</b><small>https://www.${esc(domain())}</small></div></div>
+      <div class="gh">${g.h.map(esc).join(' | ')}</div>
+      <div class="gd">${esc(g.d)}</div>
+      <div class="gl"><span>${esc(ind.offer)}</span><span>Pricing</span><span>Contact us</span></div>
+    </div>`; }
+  else if (st.plat === 'story') html = `
+    <div class="story">
+      <div class="bars"><i></i><i></i><i></i></div>
+      <div class="sh2"><div class="av">${L}</div><span>${esc(p.business)} <small>· Sponsored</small></span></div>
+      <div class="mid"><div class="em">${ind.em}</div><div class="hk">${esc(a.hook)}</div><div class="sub">${esc(a.sub)}</div></div>
+      <div class="sw">${esc(ind.cta)} ↑</div>
+    </div>`;
+  else html = `
+    <div class="li">
+      <div class="fbh"><div class="av">${L}</div><div><b>${esc(p.business)}</b><small>Promoted</small></div></div>
+      <div class="fbt">${esc(a.text.replace(/👉 /g, '').replace(/Tap "[^"]+"/, 'Learn more below'))}</div>
+      <div class="creative"><span class="tag">${esc(ind.offer)}</span><div><div class="em">${ind.em}</div><div class="hk">${esc(a.hook)}</div></div></div>
+      <div class="lif"><div><b>${esc(ind.offer)}</b><small>${esc(domain())}</small></div><span>${esc(ind.cta)}</span></div>
+    </div>`;
+  $('#adview').innerHTML = html;
+  const m = $('#adview').firstElementChild; if (m) { m.classList.add('adin'); }
+  $('#whyH').textContent = `Why the ${a.name.toLowerCase()} angle works`;
+  $('#whyP').textContent = a.why;
+  $('#bestP').textContent = a.best;
+}
+$('#angleSeg').addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; SFX.switch(); st.angle = +b.dataset.a; $$('#angleSeg button').forEach((x) => x.classList.toggle('on', x === b)); renderAd(); });
+$('#platSeg').addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; SFX.switch(); st.plat = b.dataset.p; $$('#platSeg button').forEach((x) => x.classList.toggle('on', x === b)); renderAd(); });
+$('#another').addEventListener('click', () => { st.ver++; SFX.whoosh(); renderAd(); toast('New version ✨'); });
+$('#copy').addEventListener('click', async () => {
+  let t;
+  if (st.plat === 'google') { const g = googleAd(); t = `Headlines:\n${g.h.join('\n')}\n\nDescription:\n${g.d}`; }
+  else { const a = adCopy(); t = `${a.text}\n\nHeadline: ${a.hook}\nButton: ${st.p.ind.cta}`; }
+  try { await navigator.clipboard.writeText(t); SFX.pop(); toast('Ad text copied ✓'); } catch { SFX.error(); toast('Copy blocked by your browser'); }
+});
+function toast(m) { const t = $('#toast'); t.textContent = m; t.classList.add('show'); clearTimeout(toast.h); toast.h = setTimeout(() => t.classList.remove('show'), 1600); }
+
+/* ---------- scroll niceties ---------- */
+function observe() {
+  const els = $$('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach((e) => e.classList.add('in')); return; }
+  const io = new IntersectionObserver((ents) => ents.forEach((en) => {
+    if (!en.isIntersecting) return;
+    en.target.classList.add('in'); io.unobserve(en.target);
+    if (en.target.id === 'numbers' && !st.numbersShown) { st.numbersShown = true; calc(true); setTimeout(() => SFX.cash(), 650); }
+    else if (en.target.id === 'budget') { $$('#bars .bt i').forEach((i) => (i.style.width = i.dataset.w + '%')); SFX.reveal(); }
+    else if (en.target.classList.contains('sec')) SFX.reveal();
+  }), { threshold: 0.12 });
+  els.forEach((e) => { e.classList.remove('in'); io.observe(e); });
+  const links = $$('#rnav a');
+  const io2 = new IntersectionObserver((ents) => ents.forEach((en) => { if (en.isIntersecting) links.forEach((l) => l.classList.toggle('on', l.getAttribute('href') === '#' + en.target.id)); }), { rootMargin: '-40% 0px -55% 0px' });
+  $$('section.sec').forEach((s) => io2.observe(s));
+}
+</script>
+</body>
+</html>
